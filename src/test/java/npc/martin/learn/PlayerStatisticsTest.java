@@ -56,4 +56,32 @@ public class PlayerStatisticsTest {
         // use the latter for more readability
         assertEquals(false, playerStatistics.underThirty());
     }
+
+    @Test
+    public void csvReportNull() {
+        Player player1 = new Player("Patrick", 27);
+        PlayerStatistics playerStatistics = new PlayerStatistics(player1, 0, 0);
+
+        // test whether an object is null
+        assertNull(playerStatistics.createCsvRecord());
+    }
+
+    @Test
+    public void csvReportNotNull() {
+        Player player1 = new Player("Patrick", 27);
+        PlayerStatistics playerStatistics = new PlayerStatistics(player1, 3, 3);
+
+        // test whether an object is not null - meaning object is present
+        assertNotNull(playerStatistics.createCsvRecord());
+    }
+
+    @Test
+    public void getCsvStatsRecord() {
+        Player player1 = new Player("Patrick", 27);
+        PlayerStatistics playerStatistics = new PlayerStatistics(player1, 4, 8);
+        Double[] expectedArray = { 2d, 0.5 };
+
+        // test on the contents of an array
+        assertArrayEquals(expectedArray, playerStatistics.createCsvRecord());
+    }
 }
