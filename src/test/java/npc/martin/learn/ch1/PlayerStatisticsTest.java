@@ -1,4 +1,4 @@
-package npc.martin.learn;
+package npc.martin.learn.ch1;
 
 import npc.martin.learn.entity.Player;
 import npc.martin.learn.entity.PlayerStatistics;
