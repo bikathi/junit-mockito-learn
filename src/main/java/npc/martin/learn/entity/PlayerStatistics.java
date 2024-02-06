@@ -5,6 +5,12 @@ public class PlayerStatistics {
     private int games;
     private int goals;
 
+    public PlayerStatistics(Player player, int games, int goals) {
+        this.player = player;
+        this.games = games;
+        this.goals = goals;
+    }
+
     public double gamesPerGoal() {
         return (double) this.games / (double) this.goals;
     }
